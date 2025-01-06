@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat|Quicksand");
+
+* {
+	font-family: "quicksand", Arial, Helvetica, sans-serif;
+}
+
+.loader-wrapper {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	width: 100vw;
+}
+
+.loader {
+	display: inline-block;
+	width: 64px;
+	height: 64px;
+}
+.loader:after {
+	content: " ";
+	display: block;
+	width: 48px;
+	height: 48px;
+	margin: 8px;
+	border-radius: 50%;
+	border: 6px solid #215ad6;
+	border-color: #215ad6 transparent #215ad6 transparent;
+	animation: loader-spin 1.2s linear infinite;
+}
+
+@keyframes loader-spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
