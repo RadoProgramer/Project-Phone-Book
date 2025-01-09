@@ -1,5 +1,6 @@
 import axios from "axios";
 import { createAsyncThunk } from "@reduxjs/toolkit";
+import { toast } from "react-toastify"; // Import toast
 
 axios.defaults.baseURL = "https://connections-api.goit.global";
 
@@ -62,6 +63,7 @@ export const refreshUser = createAsyncThunk(
 		const persistedToken = state.auth.token;
 
 		if (persistedToken === null) {
+			toast.error("Please log in to see your contacts!"); // Use toast
 			return thunkAPI.rejectWithValue("Please log in to see your contacts!");
 		}
 
@@ -74,5 +76,3 @@ export const refreshUser = createAsyncThunk(
 		}
 	}
 );
-
-
